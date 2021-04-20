@@ -7,20 +7,6 @@ json
    : value
    ;
 
-obj
-   : '{' pair (',' pair)* '}'
-   | '{' '}'
-   ;
-
-pair
-   : STRING ':' value
-   ;
-
-arr
-   : '[' value (',' value)* ']'
-   | '[' ']'
-   ;
-
 value
    : STRING
    | NUMBER
@@ -31,6 +17,19 @@ value
    | 'null'
    ;
 
+obj
+   : '{' pair (',' pair)* '}'
+   | '{' '}'
+   ;
+
+arr
+   : '[' value (',' value)* ']'
+   | '[' ']'
+   ;
+
+pair
+   : STRING ':' value
+   ;
 
 STRING
    : '"' (ESC | SAFECODEPOINT)* '"'
