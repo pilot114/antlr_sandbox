@@ -30,7 +30,7 @@ class JSONBaseVisitor extends AbstractParseTreeVisitor implements JSONVisitor
 	 * The default implementation returns the result of calling
 	 * {@see self::visitChildren()} on `context`.
 	 */
-	public function visitObj(Context\ObjContext $context)
+	public function visitValue(Context\ValueContext $context)
 	{
 	    return $this->visitChildren($context);
 	}
@@ -41,7 +41,7 @@ class JSONBaseVisitor extends AbstractParseTreeVisitor implements JSONVisitor
 	 * The default implementation returns the result of calling
 	 * {@see self::visitChildren()} on `context`.
 	 */
-	public function visitPair(Context\PairContext $context)
+	public function visitObj(Context\ObjContext $context)
 	{
 	    return $this->visitChildren($context);
 	}
@@ -63,7 +63,7 @@ class JSONBaseVisitor extends AbstractParseTreeVisitor implements JSONVisitor
 	 * The default implementation returns the result of calling
 	 * {@see self::visitChildren()} on `context`.
 	 */
-	public function visitValue(Context\ValueContext $context)
+	public function visitPair(Context\PairContext $context)
 	{
 	    return $this->visitChildren($context);
 	}

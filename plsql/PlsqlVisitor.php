@@ -21,6 +21,15 @@ interface PlsqlVisitor extends ParseTreeVisitor
 	public function visitPlsql(Context\PlsqlContext $context);
 
 	/**
+	 * Visit a parse tree produced by {@see PlsqlParser::package()}.
+	 *
+	 * @param Context\PackageContext $context The parse tree.
+	 *
+	 * @return mixed The visitor result.
+	 */
+	public function visitPackage(Context\PackageContext $context);
+
+	/**
 	 * Visit a parse tree produced by {@see PlsqlParser::package_obj_body()}.
 	 *
 	 * @param Context\Package_obj_bodyContext $context The parse tree.
@@ -120,6 +129,15 @@ interface PlsqlVisitor extends ParseTreeVisitor
 	public function visitParameter(Context\ParameterContext $context);
 
 	/**
+	 * Visit a parse tree produced by {@see PlsqlParser::parameter_name()}.
+	 *
+	 * @param Context\Parameter_nameContext $context The parse tree.
+	 *
+	 * @return mixed The visitor result.
+	 */
+	public function visitParameter_name(Context\Parameter_nameContext $context);
+
+	/**
 	 * Visit a parse tree produced by {@see PlsqlParser::variable_declaration()}.
 	 *
 	 * @param Context\Variable_declarationContext $context The parse tree.
@@ -156,22 +174,13 @@ interface PlsqlVisitor extends ParseTreeVisitor
 	public function visitDatatype(Context\DatatypeContext $context);
 
 	/**
-	 * Visit a parse tree produced by {@see PlsqlParser::parameter_name()}.
+	 * Visit a parse tree produced by {@see PlsqlParser::identifier()}.
 	 *
-	 * @param Context\Parameter_nameContext $context The parse tree.
-	 *
-	 * @return mixed The visitor result.
-	 */
-	public function visitParameter_name(Context\Parameter_nameContext $context);
-
-	/**
-	 * Visit a parse tree produced by {@see PlsqlParser::package_name()}.
-	 *
-	 * @param Context\Package_nameContext $context The parse tree.
+	 * @param Context\IdentifierContext $context The parse tree.
 	 *
 	 * @return mixed The visitor result.
 	 */
-	public function visitPackage_name(Context\Package_nameContext $context);
+	public function visitIdentifier(Context\IdentifierContext $context);
 
 	/**
 	 * Visit a parse tree produced by {@see PlsqlParser::type_name()}.
@@ -181,24 +190,6 @@ interface PlsqlVisitor extends ParseTreeVisitor
 	 * @return mixed The visitor result.
 	 */
 	public function visitType_name(Context\Type_nameContext $context);
-
-	/**
-	 * Visit a parse tree produced by {@see PlsqlParser::schema_object_name()}.
-	 *
-	 * @param Context\Schema_object_nameContext $context The parse tree.
-	 *
-	 * @return mixed The visitor result.
-	 */
-	public function visitSchema_object_name(Context\Schema_object_nameContext $context);
-
-	/**
-	 * Visit a parse tree produced by {@see PlsqlParser::identifier()}.
-	 *
-	 * @param Context\IdentifierContext $context The parse tree.
-	 *
-	 * @return mixed The visitor result.
-	 */
-	public function visitIdentifier(Context\IdentifierContext $context);
 
 	/**
 	 * Visit a parse tree produced by {@see PlsqlParser::char_set_name()}.
@@ -217,13 +208,4 @@ interface PlsqlVisitor extends ParseTreeVisitor
 	 * @return mixed The visitor result.
 	 */
 	public function visitId_expression(Context\Id_expressionContext $context);
-
-	/**
-	 * Visit a parse tree produced by {@see PlsqlParser::regular_id()}.
-	 *
-	 * @param Context\Regular_idContext $context The parse tree.
-	 *
-	 * @return mixed The visitor result.
-	 */
-	public function visitRegular_id(Context\Regular_idContext $context);
 }

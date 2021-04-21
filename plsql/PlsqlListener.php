@@ -22,6 +22,16 @@ interface PlsqlListener extends ParseTreeListener {
 	 */
 	public function exitPlsql(Context\PlsqlContext $context) : void;
 	/**
+	 * Enter a parse tree produced by {@see PlsqlParser::package()}.
+	 * @param $context The parse tree.
+	 */
+	public function enterPackage(Context\PackageContext $context) : void;
+	/**
+	 * Exit a parse tree produced by {@see PlsqlParser::package()}.
+	 * @param $context The parse tree.
+	 */
+	public function exitPackage(Context\PackageContext $context) : void;
+	/**
 	 * Enter a parse tree produced by {@see PlsqlParser::package_obj_body()}.
 	 * @param $context The parse tree.
 	 */
@@ -132,6 +142,16 @@ interface PlsqlListener extends ParseTreeListener {
 	 */
 	public function exitParameter(Context\ParameterContext $context) : void;
 	/**
+	 * Enter a parse tree produced by {@see PlsqlParser::parameter_name()}.
+	 * @param $context The parse tree.
+	 */
+	public function enterParameter_name(Context\Parameter_nameContext $context) : void;
+	/**
+	 * Exit a parse tree produced by {@see PlsqlParser::parameter_name()}.
+	 * @param $context The parse tree.
+	 */
+	public function exitParameter_name(Context\Parameter_nameContext $context) : void;
+	/**
 	 * Enter a parse tree produced by {@see PlsqlParser::variable_declaration()}.
 	 * @param $context The parse tree.
 	 */
@@ -172,25 +192,15 @@ interface PlsqlListener extends ParseTreeListener {
 	 */
 	public function exitDatatype(Context\DatatypeContext $context) : void;
 	/**
-	 * Enter a parse tree produced by {@see PlsqlParser::parameter_name()}.
+	 * Enter a parse tree produced by {@see PlsqlParser::identifier()}.
 	 * @param $context The parse tree.
 	 */
-	public function enterParameter_name(Context\Parameter_nameContext $context) : void;
+	public function enterIdentifier(Context\IdentifierContext $context) : void;
 	/**
-	 * Exit a parse tree produced by {@see PlsqlParser::parameter_name()}.
+	 * Exit a parse tree produced by {@see PlsqlParser::identifier()}.
 	 * @param $context The parse tree.
 	 */
-	public function exitParameter_name(Context\Parameter_nameContext $context) : void;
-	/**
-	 * Enter a parse tree produced by {@see PlsqlParser::package_name()}.
-	 * @param $context The parse tree.
-	 */
-	public function enterPackage_name(Context\Package_nameContext $context) : void;
-	/**
-	 * Exit a parse tree produced by {@see PlsqlParser::package_name()}.
-	 * @param $context The parse tree.
-	 */
-	public function exitPackage_name(Context\Package_nameContext $context) : void;
+	public function exitIdentifier(Context\IdentifierContext $context) : void;
 	/**
 	 * Enter a parse tree produced by {@see PlsqlParser::type_name()}.
 	 * @param $context The parse tree.
@@ -201,26 +211,6 @@ interface PlsqlListener extends ParseTreeListener {
 	 * @param $context The parse tree.
 	 */
 	public function exitType_name(Context\Type_nameContext $context) : void;
-	/**
-	 * Enter a parse tree produced by {@see PlsqlParser::schema_object_name()}.
-	 * @param $context The parse tree.
-	 */
-	public function enterSchema_object_name(Context\Schema_object_nameContext $context) : void;
-	/**
-	 * Exit a parse tree produced by {@see PlsqlParser::schema_object_name()}.
-	 * @param $context The parse tree.
-	 */
-	public function exitSchema_object_name(Context\Schema_object_nameContext $context) : void;
-	/**
-	 * Enter a parse tree produced by {@see PlsqlParser::identifier()}.
-	 * @param $context The parse tree.
-	 */
-	public function enterIdentifier(Context\IdentifierContext $context) : void;
-	/**
-	 * Exit a parse tree produced by {@see PlsqlParser::identifier()}.
-	 * @param $context The parse tree.
-	 */
-	public function exitIdentifier(Context\IdentifierContext $context) : void;
 	/**
 	 * Enter a parse tree produced by {@see PlsqlParser::char_set_name()}.
 	 * @param $context The parse tree.
@@ -241,14 +231,4 @@ interface PlsqlListener extends ParseTreeListener {
 	 * @param $context The parse tree.
 	 */
 	public function exitId_expression(Context\Id_expressionContext $context) : void;
-	/**
-	 * Enter a parse tree produced by {@see PlsqlParser::regular_id()}.
-	 * @param $context The parse tree.
-	 */
-	public function enterRegular_id(Context\Regular_idContext $context) : void;
-	/**
-	 * Exit a parse tree produced by {@see PlsqlParser::regular_id()}.
-	 * @param $context The parse tree.
-	 */
-	public function exitRegular_id(Context\Regular_idContext $context) : void;
 }

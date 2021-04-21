@@ -30,6 +30,17 @@ class PlsqlBaseVisitor extends AbstractParseTreeVisitor implements PlsqlVisitor
 	 * The default implementation returns the result of calling
 	 * {@see self::visitChildren()} on `context`.
 	 */
+	public function visitPackage(Context\PackageContext $context)
+	{
+	    return $this->visitChildren($context);
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation returns the result of calling
+	 * {@see self::visitChildren()} on `context`.
+	 */
 	public function visitPackage_obj_body(Context\Package_obj_bodyContext $context)
 	{
 	    return $this->visitChildren($context);
@@ -151,6 +162,17 @@ class PlsqlBaseVisitor extends AbstractParseTreeVisitor implements PlsqlVisitor
 	 * The default implementation returns the result of calling
 	 * {@see self::visitChildren()} on `context`.
 	 */
+	public function visitParameter_name(Context\Parameter_nameContext $context)
+	{
+	    return $this->visitChildren($context);
+	}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation returns the result of calling
+	 * {@see self::visitChildren()} on `context`.
+	 */
 	public function visitVariable_declaration(Context\Variable_declarationContext $context)
 	{
 	    return $this->visitChildren($context);
@@ -195,18 +217,7 @@ class PlsqlBaseVisitor extends AbstractParseTreeVisitor implements PlsqlVisitor
 	 * The default implementation returns the result of calling
 	 * {@see self::visitChildren()} on `context`.
 	 */
-	public function visitParameter_name(Context\Parameter_nameContext $context)
-	{
-	    return $this->visitChildren($context);
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation returns the result of calling
-	 * {@see self::visitChildren()} on `context`.
-	 */
-	public function visitPackage_name(Context\Package_nameContext $context)
+	public function visitIdentifier(Context\IdentifierContext $context)
 	{
 	    return $this->visitChildren($context);
 	}
@@ -218,28 +229,6 @@ class PlsqlBaseVisitor extends AbstractParseTreeVisitor implements PlsqlVisitor
 	 * {@see self::visitChildren()} on `context`.
 	 */
 	public function visitType_name(Context\Type_nameContext $context)
-	{
-	    return $this->visitChildren($context);
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation returns the result of calling
-	 * {@see self::visitChildren()} on `context`.
-	 */
-	public function visitSchema_object_name(Context\Schema_object_nameContext $context)
-	{
-	    return $this->visitChildren($context);
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation returns the result of calling
-	 * {@see self::visitChildren()} on `context`.
-	 */
-	public function visitIdentifier(Context\IdentifierContext $context)
 	{
 	    return $this->visitChildren($context);
 	}
@@ -262,17 +251,6 @@ class PlsqlBaseVisitor extends AbstractParseTreeVisitor implements PlsqlVisitor
 	 * {@see self::visitChildren()} on `context`.
 	 */
 	public function visitId_expression(Context\Id_expressionContext $context)
-	{
-	    return $this->visitChildren($context);
-	}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation returns the result of calling
-	 * {@see self::visitChildren()} on `context`.
-	 */
-	public function visitRegular_id(Context\Regular_idContext $context)
 	{
 	    return $this->visitChildren($context);
 	}

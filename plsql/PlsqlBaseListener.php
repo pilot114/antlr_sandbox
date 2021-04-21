@@ -34,6 +34,19 @@ class PlsqlBaseListener implements PlsqlListener
 	 *
 	 * The default implementation does nothing.
 	 */
+	public function enterPackage(Context\PackageContext $context) : void {}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
+	public function exitPackage(Context\PackageContext $context) : void {}
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
 	public function enterPackage_obj_body(Context\Package_obj_bodyContext $context) : void {}
 
 	/**
@@ -177,6 +190,19 @@ class PlsqlBaseListener implements PlsqlListener
 	 *
 	 * The default implementation does nothing.
 	 */
+	public function enterParameter_name(Context\Parameter_nameContext $context) : void {}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
+	public function exitParameter_name(Context\Parameter_nameContext $context) : void {}
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
 	public function enterVariable_declaration(Context\Variable_declarationContext $context) : void {}
 
 	/**
@@ -229,27 +255,14 @@ class PlsqlBaseListener implements PlsqlListener
 	 *
 	 * The default implementation does nothing.
 	 */
-	public function enterParameter_name(Context\Parameter_nameContext $context) : void {}
+	public function enterIdentifier(Context\IdentifierContext $context) : void {}
 
 	/**
 	 * {@inheritdoc}
 	 *
 	 * The default implementation does nothing.
 	 */
-	public function exitParameter_name(Context\Parameter_nameContext $context) : void {}
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function enterPackage_name(Context\Package_nameContext $context) : void {}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function exitPackage_name(Context\Package_nameContext $context) : void {}
+	public function exitIdentifier(Context\IdentifierContext $context) : void {}
 	/**
 	 * {@inheritdoc}
 	 *
@@ -263,32 +276,6 @@ class PlsqlBaseListener implements PlsqlListener
 	 * The default implementation does nothing.
 	 */
 	public function exitType_name(Context\Type_nameContext $context) : void {}
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function enterSchema_object_name(Context\Schema_object_nameContext $context) : void {}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function exitSchema_object_name(Context\Schema_object_nameContext $context) : void {}
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function enterIdentifier(Context\IdentifierContext $context) : void {}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function exitIdentifier(Context\IdentifierContext $context) : void {}
 	/**
 	 * {@inheritdoc}
 	 *
@@ -315,19 +302,6 @@ class PlsqlBaseListener implements PlsqlListener
 	 * The default implementation does nothing.
 	 */
 	public function exitId_expression(Context\Id_expressionContext $context) : void {}
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function enterRegular_id(Context\Regular_idContext $context) : void {}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function exitRegular_id(Context\Regular_idContext $context) : void {}
 
 	/**
 	 * {@inheritdoc}

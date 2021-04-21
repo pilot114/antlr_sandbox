@@ -22,6 +22,16 @@ interface JSONListener extends ParseTreeListener {
 	 */
 	public function exitJson(Context\JsonContext $context) : void;
 	/**
+	 * Enter a parse tree produced by {@see JSONParser::value()}.
+	 * @param $context The parse tree.
+	 */
+	public function enterValue(Context\ValueContext $context) : void;
+	/**
+	 * Exit a parse tree produced by {@see JSONParser::value()}.
+	 * @param $context The parse tree.
+	 */
+	public function exitValue(Context\ValueContext $context) : void;
+	/**
 	 * Enter a parse tree produced by {@see JSONParser::obj()}.
 	 * @param $context The parse tree.
 	 */
@@ -31,16 +41,6 @@ interface JSONListener extends ParseTreeListener {
 	 * @param $context The parse tree.
 	 */
 	public function exitObj(Context\ObjContext $context) : void;
-	/**
-	 * Enter a parse tree produced by {@see JSONParser::pair()}.
-	 * @param $context The parse tree.
-	 */
-	public function enterPair(Context\PairContext $context) : void;
-	/**
-	 * Exit a parse tree produced by {@see JSONParser::pair()}.
-	 * @param $context The parse tree.
-	 */
-	public function exitPair(Context\PairContext $context) : void;
 	/**
 	 * Enter a parse tree produced by {@see JSONParser::arr()}.
 	 * @param $context The parse tree.
@@ -52,13 +52,13 @@ interface JSONListener extends ParseTreeListener {
 	 */
 	public function exitArr(Context\ArrContext $context) : void;
 	/**
-	 * Enter a parse tree produced by {@see JSONParser::value()}.
+	 * Enter a parse tree produced by {@see JSONParser::pair()}.
 	 * @param $context The parse tree.
 	 */
-	public function enterValue(Context\ValueContext $context) : void;
+	public function enterPair(Context\PairContext $context) : void;
 	/**
-	 * Exit a parse tree produced by {@see JSONParser::value()}.
+	 * Exit a parse tree produced by {@see JSONParser::pair()}.
 	 * @param $context The parse tree.
 	 */
-	public function exitValue(Context\ValueContext $context) : void;
+	public function exitPair(Context\PairContext $context) : void;
 }

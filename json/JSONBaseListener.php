@@ -34,6 +34,19 @@ class JSONBaseListener implements JSONListener
 	 *
 	 * The default implementation does nothing.
 	 */
+	public function enterValue(Context\ValueContext $context) : void {}
+
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
+	public function exitValue(Context\ValueContext $context) : void {}
+	/**
+	 * {@inheritdoc}
+	 *
+	 * The default implementation does nothing.
+	 */
 	public function enterObj(Context\ObjContext $context) : void {}
 
 	/**
@@ -42,19 +55,6 @@ class JSONBaseListener implements JSONListener
 	 * The default implementation does nothing.
 	 */
 	public function exitObj(Context\ObjContext $context) : void {}
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function enterPair(Context\PairContext $context) : void {}
-
-	/**
-	 * {@inheritdoc}
-	 *
-	 * The default implementation does nothing.
-	 */
-	public function exitPair(Context\PairContext $context) : void {}
 	/**
 	 * {@inheritdoc}
 	 *
@@ -73,14 +73,14 @@ class JSONBaseListener implements JSONListener
 	 *
 	 * The default implementation does nothing.
 	 */
-	public function enterValue(Context\ValueContext $context) : void {}
+	public function enterPair(Context\PairContext $context) : void {}
 
 	/**
 	 * {@inheritdoc}
 	 *
 	 * The default implementation does nothing.
 	 */
-	public function exitValue(Context\ValueContext $context) : void {}
+	public function exitPair(Context\PairContext $context) : void {}
 
 	/**
 	 * {@inheritdoc}

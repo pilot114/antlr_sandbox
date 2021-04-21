@@ -19,7 +19,8 @@ final class TreeShapeListener implements ParseTreeListener {
     public function exitEveryRule(ParserRuleContext $ctx) : void {}
 
     public function enterEveryRule(ParserRuleContext $ctx) : void {
-        echo sprintf("%s: %s\n", get_class($ctx), $ctx->getText());
+        $header = sprintf("\033[31m ### %s: ###\033[0m", get_class($ctx));
+        echo sprintf("%s\n%s\n", $header, $ctx->getText());
     }
 }
 

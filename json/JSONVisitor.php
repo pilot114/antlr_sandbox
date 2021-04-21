@@ -21,6 +21,15 @@ interface JSONVisitor extends ParseTreeVisitor
 	public function visitJson(Context\JsonContext $context);
 
 	/**
+	 * Visit a parse tree produced by {@see JSONParser::value()}.
+	 *
+	 * @param Context\ValueContext $context The parse tree.
+	 *
+	 * @return mixed The visitor result.
+	 */
+	public function visitValue(Context\ValueContext $context);
+
+	/**
 	 * Visit a parse tree produced by {@see JSONParser::obj()}.
 	 *
 	 * @param Context\ObjContext $context The parse tree.
@@ -28,15 +37,6 @@ interface JSONVisitor extends ParseTreeVisitor
 	 * @return mixed The visitor result.
 	 */
 	public function visitObj(Context\ObjContext $context);
-
-	/**
-	 * Visit a parse tree produced by {@see JSONParser::pair()}.
-	 *
-	 * @param Context\PairContext $context The parse tree.
-	 *
-	 * @return mixed The visitor result.
-	 */
-	public function visitPair(Context\PairContext $context);
 
 	/**
 	 * Visit a parse tree produced by {@see JSONParser::arr()}.
@@ -48,11 +48,11 @@ interface JSONVisitor extends ParseTreeVisitor
 	public function visitArr(Context\ArrContext $context);
 
 	/**
-	 * Visit a parse tree produced by {@see JSONParser::value()}.
+	 * Visit a parse tree produced by {@see JSONParser::pair()}.
 	 *
-	 * @param Context\ValueContext $context The parse tree.
+	 * @param Context\PairContext $context The parse tree.
 	 *
 	 * @return mixed The visitor result.
 	 */
-	public function visitValue(Context\ValueContext $context);
+	public function visitPair(Context\PairContext $context);
 }
